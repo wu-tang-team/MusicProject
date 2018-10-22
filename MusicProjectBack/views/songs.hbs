@@ -1,0 +1,27 @@
+<h1>Top 5 Song List</h1>
+
+
+
+{{#each songs}}
+     <div>
+   
+        {{!-- <input type="text" name="ArtistName" id="ArtistName" value="{{this.ArtistName}}" required> --}}
+        <p>Artist Name: {{this.ArtistName}}</p>
+    </div>
+        <div>
+     
+        {{!-- <input type="text" name="SongName"  value="{{this.SongName}}" required> --}}
+         <p>Song Name: {{this.SongName}}</p>
+    </div>
+  
+    <div>
+      
+        {{!-- <input type="text" name="Url" value="{{this.URL}}" required> --}}
+        <p>Url:  {{this.URL}}</p>
+    </div>
+    {{!-- <div>
+        <input type="hidden" name="UserId" value="{{this.UserId}}" placeholder="{{this.UserId}}">
+    </div> --}}
+  <a href="/users/songs/{{this.UserId}}"><button>Update</button></a>
+    <br />
+{{/each}}

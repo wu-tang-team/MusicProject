@@ -1,0 +1,81 @@
+<h1>Hello {{user.FirstName}} {{user.LastName}}</h1>
+<h2>Email: {{user.Email}}</h2>
+<h3>Username: {{user.Username}}</h3>
+{{user.UserId}}
+
+<h1>Add a Song to your Song List</h1>
+
+<form method="POST" action="/users/createsonglist/{{user.UserId}}"> 
+     <div>
+        <label for="ArtistName">Artist Name: </label>
+        <input type="text" name="ArtistName1" id="ArtistName1" required>
+    </div>
+        <div>
+        <label for="SongName">Song Name: </label>
+        <input type="text" name="SongName1" required>
+    </div>
+   
+    <div>
+        <label for="Url">Url: </label>
+        <input type="text" name="Url1" required>
+    </div>
+  {{!--  <div>
+        <label for="ArtistName">Artist Name: </label>
+        <input type="text" name="ArtistName2" id="ArtistName2" required>
+    </div>
+        <div>
+        <label for="SongName">Song Name: </label>
+        <input type="text" name="SongName2" required>
+    </div>
+  
+    <div>
+        <label for="Url">Url: </label>
+        <input type="text" name="Url2"  required>
+    </div>
+    <hr>
+    <div>
+        <label for="ArtistName">Artist Name: </label>
+        <input type="text" name="ArtistName3" id="ArtistName3"  required>
+    </div>
+        <div>
+        <label for="SongName">Song Name: </label>
+        <input type="text" name="SongName3"   required>
+    </div>
+  
+    <div>
+        <label for="Url">Url: </label>
+        <input type="text" name="Url3"  required>
+    </div>
+    <hr>
+    <div>
+        <label for="ArtistName">Artist Name: </label>
+        <input type="text" name="ArtistName4" id="ArtistName4"  required>
+    </div>
+        <div>
+        <label for="SongName">Song Name: </label>
+        <input type="text" name="SongName4"   required>
+    </div>
+  
+    <div>
+        <label for="Url">Url: </label>
+        <input type="text" name="Url4"  required>
+    </div>
+    <hr>
+    <div>
+        <label for="ArtistName">Artist Name: </label>
+        <input type="text" name="ArtistName5" id="ArtistName5"  required>
+    </div>
+        <div>
+        <label for="SongName">Song Name: </label>
+        <input type="text" name="SongName5"   required>
+    </div>
+  
+    <div>
+        <label for="Url">Url: </label>
+        <input type="text" name="Url5"  required>
+    </div> --}}
+    <hr>
+
+  <button type="submit" id="submitButton">Submit</button>
+    <br />
+</form>

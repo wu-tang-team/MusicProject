@@ -1,0 +1,51 @@
+<h3>Update this song</h3>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<script>
+
+$(document).ready(function() {
+    $('#submit').click(  function () {
+
+        console.log("onsubmit ###################")
+        const ArtistName = document.getElementById('ArtistName').value;
+        const SongName = document.getElementById('SongName').value;
+        const URL = document.getElementById('URL').value;
+        const Owner = document.getElementById('Owner').value;
+
+        $.ajax({
+            url: '/users/song/{{song.UserId}}',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({ ArtistName: ArtistName, SongName: SongName, Url: URL, Owner:Owner }),
+            type: 'PUT'
+        })
+        window.loction.href = '/users/createsonglist/'
+
+        ///WE STOPPED HERE !!!!!!!!!!!!!!\\
+    })
+})
+</script>
+
+
+<form onsubmit="onSubmit(); return false"></form>
+    <div>
+        <label for="ArtistName">Artist Name: </label>
+        <input type="text" name="ArtistName" id="ArtistName" value="{{song.ArtistName}}" required>
+    </div>
+        <div>
+        <label for="SongName">Song Name: </label>
+        <input type="text" name="SongName" id="SongName"  value="{{song.SongName}}" required>
+    </div>
+  
+    <div>
+        <label for="Url">Url: </label>
+        <input type="text" name="Url"  id="URL"  value="{{song.URL}}" required>
+    </div>
+
+  <div>
+
+        <input type="text" name="Owner"  id="Owner"  value="{{song.Owner}}" required>
+    </div>
+    <button type="submit" id="submit">Update song</button>
+    <br />
+</form>
